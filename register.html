@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rolls Royce Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="login-container">
+        <div class="container-wrapper">
+            <div class="side-content" id="sideContent">
+                <img src="Imagers/Rolls-Royce-logo-2048x2048.png" alt="Rolls Royce Logo" class="side-logo">
+                <div class="car-section">
+                    <img src="Imagers/2023-rolls-royce-cullinan-black-badge-blue-shadow-kw-7680x4320.jpg" alt="The Blue Ghost" class="car-image">
+                    <ul class="car-features">
+                        <li>Engine: 6.75L Twin-Turbocharged V12</li>
+                        <li>Horsepower: 563 hp</li>
+                        <li>0–100 km/h: 4.8 seconds</li>
+                        <li>Interior: Hand-stitched leather, Starlight Headliner</li>
+                    </ul>
+                    <h1 class="car-title">The Blue Ghost</h1>
+                    <h2 class="car-desc"><em>A masterpiece of luxury engineering, where<br>silence speaks louder than speed...</em></h2>
+                </div>
+            </div>
+            <div class="login-box">
+                <img src="Imagers/Rolls-Royce-logo-2048x2048.png" alt="Rolls Royce Logo" class="logo">
+                <form id="registerForm" style="display:flex;">
+                    <label for="register-username">Username</label>
+                    <input type="text" id="register-username" name="username" placeholder="Username" required>
+                    <label for="register-email">Email Address</label>
+                    <input type="email" id="register-email" name="email" placeholder="Email Address" required>
+                    <label for="register-password">Password</label>
+                    <input type="password" id="register-password" name="password" placeholder="Password" required>
+                    <label for="register-confirm-password">Confirm Password</label>
+                    <input type="password" id="register-confirm-password" name="confirm-password" placeholder="Confirm Password" required>
+                    <button type="submit" class="login-btn">Register</button>
+                    <div class="register-link">
+                        Already have an account? <a href="login.html" id="showLogin">Log in</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        const registerForm = document.getElementById('registerForm');
+        registerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('register-username').value;
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+            const confirmPassword = document.getElementById('register-confirm-password').value;
+
+            if (!username || !email || !password || !confirmPassword) {
+                alert('Please fill in all fields.');
+                return;
+            }
+            if (password !== confirmPassword) {
+                alert('Passwords do not match.');
+                return;
+            }
+            // Registration successful
+            alert('Registration successful!');
+            window.location.href = 'login.html';
+        });
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(() => {
+                document.querySelector('.login-box').style.opacity = '1';
+                document.querySelector('.login-box').style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,674 @@
+body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            box-sizing: border-box;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: url('Imagers/Rolls-Royce Wraith.jpg') no-repeat center center/cover;
+            z-index: 1;
+        }
+
+        .background-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 2;
+        }
+
+        .login-container {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3;
+            padding: 20px;
+        }
+
+        .container-wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: stretch;
+            width: 100vw;
+            max-width: 100vw;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .side-content {
+            flex: 1 1 0;
+            max-width: 50vw;
+            min-width: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .show-side-content {
+            display: block !important;
+        }
+
+        .side-logo {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 24px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .car-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        .car-image {
+            width: 100%;
+            max-width: 480px;
+            height: 280px;
+            margin-bottom: 32px;
+            border-radius: 18px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            object-fit: cover;
+            display: block;
+        }
+
+        .car-features {
+            list-style: circle;
+            margin: 0 0 36px 0;
+            padding-left: 32px;
+            font-size: 1.1rem;
+            color: #fff;
+            line-height: 1.8;
+        }
+
+        .car-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin: 0 0 18px 0;
+            color: #fff;
+            letter-spacing: 1.5px;
+        }
+
+        .car-desc {
+            font-size: 1.3rem;
+            font-style: italic;
+            font-weight: 400;
+            margin: 0 0 36px 0;
+            color: #b3c6ff;
+            line-height: 1.6;
+        }
+
+        .login-box {
+            flex: 1 1 0;
+            max-width: 420px;
+            min-width: 280px;
+            background: rgba(17, 17, 17, 0.95);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            padding: 40px 32px;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            margin: 40px 24px 40px 24px;
+        }
+
+        .login-box form,
+        .login-box .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .login-box .logo {
+            display: block;
+            margin: 0 auto 18px auto;
+            width: 60px;
+            height: auto;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 18px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #000;
+        }
+
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            padding: 12px;
+            margin-bottom: 18px;
+            border: none;
+            border-radius: 7px;
+            background: #222;
+            color: #fff;
+            font-size: 15px;
+            outline: none;
+            transition: background 0.2s;
+            width: 100%;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="email"]:focus {
+            background: #333;
+        }
+
+        input::placeholder {
+            color: #aaa;
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+            font-size: 14px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+        }
+
+        .forgot-password {
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .forgot-password:hover {
+            color: #1d4ed8;
+        }
+
+        .login-btn {
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            border-radius: 7px;
+            padding: 13px 0;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 18px;
+            transition: background 0.2s;
+            width: 100%;
+        }
+
+        .login-btn:hover {
+            background: #1d4ed8;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 18px 0 12px 0;
+            color: #aaa;
+            font-size: 13px;
+        }
+
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #333;
+        }
+
+        .divider:not(:empty)::before {
+            margin-right: .75em;
+        }
+
+        .divider:not(:empty)::after {
+            margin-left: .75em;
+        }
+
+        .social-login {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .social-login button img,
+        .social-login button span {
+            vertical-align: middle;
+            margin-right: 8px;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+        }
+
+        .social-login button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .google-btn, .apple-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #222;
+            color: #fff;
+            border: none;
+            border-radius: 7px;
+            padding: 12px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.2s;
+            width: 100%;
+        }
+
+        .google-btn:hover {
+            background: #ea4335;
+        }
+
+        .apple-btn:hover {
+            background: #000;
+        }
+
+        .register-link {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .register-link a {
+            color: #2563eb;
+            text-decoration: none;
+            margin-left: 4px;
+            transition: color 0.2s;
+        }
+
+        .register-link a:hover {
+            color: #1d4ed8;
+        }
+
+        /* Tablet styles */
+        @media (max-width: 1024px) {
+            .container-wrapper {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .side-content {
+                width: 100%;
+                text-align: center;
+                padding: 20px;
+            }
+            
+            .car-image {
+                max-width: 350px;
+                height: 200px;
+            }
+            
+            .car-title {
+                font-size: 2rem;
+            }
+            
+            .car-desc {
+                font-size: 1.1rem;
+            }
+            
+            .car-features {
+                font-size: 1rem;
+                text-align: left;
+                max-width: 350px;
+                margin: 0 auto 20px auto;
+            }
+        }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            .login-container {
+                padding: 15px;
+            }
+            
+            .container-wrapper {
+                gap: 15px;
+            }
+            
+            .side-content {
+                padding: 15px;
+            }
+            
+            .car-image {
+                max-width: 280px;
+                height: 160px;
+            }
+            
+            .car-title {
+                font-size: 1.6rem;
+            }
+            
+            .car-desc {
+                font-size: 1rem;
+            }
+            
+            .car-features {
+                font-size: 0.9rem;
+                padding-left: 20px;
+            }
+            
+            .login-box {
+                padding: 30px 20px;
+            }
+            
+            .social-login {
+                flex-direction: row;
+            }
+            
+            .google-btn, .apple-btn {
+                flex: 1;
+            }
+        }
+
+        /* Small mobile styles */
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 10px;
+            }
+            
+            .side-content {
+                padding: 10px;
+            }
+            
+            .car-image {
+                max-width: 220px;
+                height: 130px;
+            }
+            
+            .car-title {
+                font-size: 1.4rem;
+            }
+            
+            .car-desc {
+                font-size: 0.9rem;
+            }
+            
+            .car-features {
+                font-size: 0.8rem;
+                line-height: 1.4;
+            }
+            
+            .login-box {
+                padding: 20px 15px;
+            }
+            
+            .logo {
+                width: 50px;
+                height: 50px;
+            }
+            
+            input[type="text"],
+            input[type="password"],
+            input[type="email"] {
+                padding: 10px;
+                font-size: 14px;
+            }
+            
+            .login-btn {
+                padding: 12px 0;
+                font-size: 15px;
+            }
+            
+            .social-login {
+                flex-direction: column;
+            }
+            
+            .options {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+        }
+
+        /* Very small mobile styles */
+        @media (max-width: 320px) {
+            .login-container {
+                padding: 5px;
+            }
+            
+            .login-box {
+                padding: 15px 10px;
+            }
+            
+            .car-image {
+                max-width: 180px;
+                height: 100px;
+            }
+            
+            .car-title {
+                font-size: 1.2rem;
+            }
+            
+            .car-desc {
+                font-size: 0.8rem;
+            }
+            
+            .car-features {
+                font-size: 0.7rem;
+            }
+            
+            .logo {
+                width: 40px;
+                height: 40px;
+            }
+            
+            input[type="text"],
+            input[type="password"],
+            input[type="email"] {
+                padding: 8px;
+                font-size: 13px;
+            }
+            
+            .login-btn {
+                padding: 10px 0;
+                font-size: 14px;
+            }
+            
+            .google-btn, .apple-btn {
+                padding: 10px;
+                font-size: 13px;
+            }
+            
+            .register-link {
+                font-size: 13px;
+            }
+        }
+
+        /* Landscape mobile orientation */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .login-container {
+                padding: 10px;
+            }
+            
+            .container-wrapper {
+                flex-direction: row;
+                gap: 20px;
+            }
+            
+            .side-content {
+                display: none;
+            }
+            
+            .show-side-content {
+                display: none !important;
+            }
+            
+            .login-box {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .side-content {
+                display: flex !important;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100vw;
+                max-width: 100vw;
+                min-width: 0;
+                margin-bottom: 8px;
+                padding: 0;
+                background: none;
+            }
+            .car-section {
+                align-items: center;
+                width: 100vw;
+                max-width: 100vw;
+            }
+            .car-image {
+                width: 90vw;
+                max-width: 220px;
+                height: auto;
+                min-height: 60px;
+                margin-bottom: 8px;
+                border-radius: 12px;
+                object-fit: cover;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            }
+            .car-features, .car-title, .car-desc {
+                font-size: 0.95rem;
+                line-height: 1.2rem;
+                margin: 0 0 4px 0;
+                text-align: center;
+            }
+        }
+        @media (max-width: 400px) {
+            .car-image {
+                max-width: 120px;
+            }
+            .car-title, .car-desc, .car-features {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* iPhone SE, 6/7/8, X/XS/11 Pro, 12 Mini */
+        @media (max-width: 393px) {
+            .login-box, .side-content, .car-section {
+                width: 98vw !important;
+                max-width: 98vw !important;
+                padding: 4px 1vw !important;
+            }
+            .car-image {
+                max-width: 90vw !important;
+                height: auto !important;
+            }
+            .logo, .side-logo {
+                width: 32px !important;
+            }
+            input, button {
+                font-size: 14px !important;
+            }
+        }
+
+        /* iPhone 6/7/8 Plus, XR/11, XS Max/11 Pro Max, 12/13/14, 15 Pro, 15 Pro Max */
+        @media (min-width: 394px) and (max-width: 450px) {
+            .login-box, .side-content, .car-section {
+                width: 95vw !important;
+                max-width: 95vw !important;
+                padding: 8px 2vw !important;
+            }
+            .car-image {
+                max-width: 92vw !important;
+                height: auto !important;
+            }
+            .logo, .side-logo {
+                width: 40px !important;
+            }
+            input, button {
+                font-size: 15px !important;
+            }
+        }
+
+        /* iPhone 12/13/14 Pro Max, 15 Pro Max, and similar large phones */
+        @media (min-width: 451px) and (max-width: 500px) {
+            .login-box, .side-content, .car-section {
+                width: 90vw !important;
+                max-width: 90vw !important;
+                padding: 12px 3vw !important;
+            }
+            .car-image {
+                max-width: 88vw !important;
+                height: auto !important;
+            }
+            .logo, .side-logo {
+                width: 48px !important;
+            }
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .container-wrapper {
+                flex-direction: column;
+                align-items: center;
+                min-height: 100vh;
+            }
+            .side-content, .login-box {
+                max-width: 100vw;
+                min-width: 0;
+            }
+            .side-content > .side-logo {
+                display: none !important;
+            }
+        }
